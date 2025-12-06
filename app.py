@@ -1,11 +1,7 @@
 import streamlit as st
 
-st.header("Welcome")
-st.title("First Aid Video Search")
-
-# ---------------------------
-# YOUR DATA (converted sheet)
-# ---------------------------
+st.header("Welcome!")
+st.title("Indian Red Cross First Aid")
 
 video_data = {
     "asthma": "https://youtu.be/CAcwoaylH9o?si=sGFn_-wG-e2fmKFZ",
@@ -25,9 +21,6 @@ video_data = {
     "dislocation/fracture": "https://youtu.be/sPzXAVNVJr0?si=E-WJGCa5O0mTLl0l"
 }
 
-# ---------------------------
-# SEARCH BAR
-# ---------------------------
 
 query = st.text_input("Type any first-aid topic (example: asthma, bleeding, CPR, dog bite...)")
 
@@ -37,7 +30,6 @@ if st.button("Search"):
     if key in video_data:
         url = video_data[key]
 
-        # Extract the YouTube ID (works for both formats)
         if "youtu.be" in url:
             video_id = url.split("/")[-1].split("?")[0]
         else:
